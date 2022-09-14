@@ -1,38 +1,176 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Montserrat:wght@300;500&family=Outfit:wght@300;400;600&family=Roboto:ital,wght@0,300;0,700;1,900&display=swap');
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
 }
 
-.App-header {
-  background-color: #282c34;
+li, h1{
+  list-style: none;
+  padding: 10px;
+  border-radius: 8px ;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
   min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+a{
+  text-decoration: none;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  padding: 10px 25px;
+  color: white;
+  font-size: 2rem;
+  background-color: #9CA3AF;
+  border: 0;
+  outline: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+nav{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 10px;
+  height: 20vh;
+}
+
+.main-container{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #34D399;
+}
+
+.login-container, .signup-container{
+  display: flex;  
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: white;
+  gap: 25px;
+  padding: 25px 45px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+form>input{
+  outline: 0;
+  border: 0;
+  border-bottom: 2px solid #65a30d;
+  padding: 10px 20px;
+}
+
+form>input:focus{
+  outline: 0;
+  border: 0;
+  
+  border-bottom: 5px solid #65a30d;
+}
+form>button{
+  padding: 10px 25px;
+  cursor: pointer;
+  background-color: #10b981;
+  border: 0;
+  border-radius: 5px;
+  margin-top: 10px;
+  color: white;
+}
+
+label{
+  font-size: 1rem;
+  opacity: 0.5;
+}
+
+.posts-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+
+  color: white;
+  padding: 25px;
+  width: 100%;
+
+}
+
+.post-details{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #3f3f46;
+  height: 100vh;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+p{
+    font-size: 1.3rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
