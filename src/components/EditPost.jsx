@@ -31,6 +31,7 @@ export const EditPost = () => {
         setDescription(json[0].desc);
         setUrl(json[0].img);
         setImgId(json[0]?.imgId);
+        setPublished(json[0].published);
       } else {
         setError(json.msg);
       }
@@ -115,11 +116,20 @@ export const EditPost = () => {
           style={{ display: 'flex', justifyContent: 'center', gap: '25px' }}
         >
           <h2>Publish your post?</h2>
-          <input
-            type="checkbox"
-            value={published}
-            onChange={e => setPublished(e.target.checked)}
-          />
+          {published ? (
+            <input
+              checked
+              type="checkbox"
+              value={published}
+              onChange={e => setPublished(!published)}
+            />
+          ) : (
+            <input
+              type="checkbox"
+              value={published}
+              onChange={e => setPublished(!published)}
+            />
+          )}
         </div>
         <div
           className="update-image-section"

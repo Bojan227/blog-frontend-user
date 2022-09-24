@@ -28,7 +28,7 @@ export const PostDetails = () => {
 
   return (
     <div className="post-details">
-      <img src={url} alt="img" style={{ height: '450px', width: '85%' }} />
+      <img src={url} alt="img" style={{ height: '450px' }} />
       <h1>{title}</h1>
       <div style={{ display: 'flex', alignItems: 'center', gap: '18px' }}>
         <h2>{user}</h2>

@@ -170,6 +170,15 @@ label {
   color: white;
 }
 
+.post-details > img {
+  width: '85%';
+}
 p {
   font-size: 1.3rem;
+}
+
+@media (max-width: 660px) {
+  nav {
+    flex-direction: column;
+  }
 }

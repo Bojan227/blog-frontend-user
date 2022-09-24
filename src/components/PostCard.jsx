@@ -45,7 +45,11 @@ export const PostCard = ({
     >
       {message}
       <div>
-        <img style={{ borderRadius: '10px' }} src={url} alt="img" />
+        <img
+          style={{ borderRadius: '10px', width: '450px', height: '50%' }}
+          src={url}
+          alt="img"
+        />
         <Link to={`details/${id}`}>
           <h2
             style={{ fontWeight: '900', textAlign: 'center', color: 'white' }}
@@ -74,7 +78,9 @@ export const PostCard = ({
       <div
         style={{
           display: 'flex',
-          justifyContent: 'space-evenly',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '55px',
           width: '100%',
         }}
       >
