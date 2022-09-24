@@ -74,7 +74,7 @@ export const PostCard = ({
       <div
         style={{
           display: 'flex',
-          justifyContent: 'space-around',
+          justifyContent: 'space-evenly',
           width: '100%',
         }}
       >
