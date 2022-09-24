@@ -47,7 +47,7 @@ export const PostForm = () => {
   };
 
   return (
-    <div style={{ width: '100%', padding: '45px' }}>
+    <div style={{ width: '75%', padding: '45px' }}>
       {message && <Navigate to="/" />}
       <form onSubmit={handleSubmit}>
         <h1 style={{ textAlign: 'center' }}>Create Post</h1>
