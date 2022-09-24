@@ -5,6 +5,7 @@ export default function useDetails() {
   const [description, setDescription] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [createdAt, setCreatedAt] = useState('');
+  const [url, setUrl] = useState('')
   const [error, setError] = useState('');
 
   const getPostDetails = async (id) => {
@@ -16,11 +17,12 @@ export default function useDetails() {
       setTitle(json[0].title);
       setDescription(json[0].desc);
       setCreatedAt(json[0].createdAt);
+      setUrl(json[0].img)
     } else {
       setError(json.msg);
     }
     setIsLoading(false);
   };
 
-  return { getPostDetails, title, description, error, createdAt, isLoading };
+  return { getPostDetails, title, description, error, createdAt, isLoading, url };
 }

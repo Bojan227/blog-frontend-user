@@ -5,7 +5,6 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  
 }
 
 /* Remove default margin */
@@ -28,10 +27,11 @@ ol[role='list'] {
   list-style: none;
 }
 
-li, h1{
+li,
+h1 {
   list-style: none;
   padding: 10px;
-  border-radius: 8px ;
+  border-radius: 8px;
 }
 
 /* Set core root defaults */
@@ -51,7 +51,7 @@ body {
 a:not([class]) {
   text-decoration-skip-ink: auto;
 }
-a{
+a {
   text-decoration: none;
 }
 
@@ -66,7 +66,7 @@ button {
   padding: 10px 25px;
   color: white;
   font-size: 2rem;
-  background-color: #9CA3AF;
+  background-color: #9ca3af;
   border: 0;
   outline: 0;
   border-radius: 8px;
@@ -80,7 +80,7 @@ select {
   font: inherit;
 }
 
-nav{
+nav {
   display: flex;
   width: 100%;
   align-items: center;
@@ -90,17 +90,18 @@ nav{
   height: 20vh;
 }
 
-.main-container{
+.main-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   align-items: center;
   justify-content: center;
-  background-color: #34D399;
+  background-color: #34d399;
 }
 
-.login-container, .signup-container{
-  display: flex;  
+.login-container,
+.signup-container {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -111,27 +112,27 @@ nav{
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-form{
+form {
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin-top: 25px;
 }
 
-form>input{
+form > input {
   outline: 0;
   border: 0;
   border-bottom: 2px solid #65a30d;
   padding: 10px 20px;
 }
 
-form>input:focus{
+form > input:focus {
   outline: 0;
   border: 0;
-  
+
   border-bottom: 5px solid #65a30d;
 }
-form>button{
+form > button {
   padding: 10px 25px;
   cursor: pointer;
   background-color: #10b981;
@@ -141,12 +142,12 @@ form>button{
   color: white;
 }
 
-label{
+label {
   font-size: 1rem;
   opacity: 0.5;
 }
 
-.posts-container{
+.posts-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   justify-content: center;
@@ -156,21 +157,19 @@ label{
   color: white;
   padding: 25px;
   width: 100%;
-
 }
 
-.post-details{
+.post-details {
   display: flex;
+  padding: 10px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #3f3f46;
-  height: 100vh;
+  min-height: 100vh;
   color: white;
 }
 
-p{
-    font-size: 1.3rem;
+p {
+  font-size: 1.3rem;
 }
-
-
