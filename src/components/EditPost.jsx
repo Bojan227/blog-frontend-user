@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from 'react';
 import { useEdit } from '../hooks/useEdit';
 
 import Cookies from 'universal-cookie';
+import { set } from 'date-fns/esm';
 const cookies = new Cookies();
 
 export const EditPost = () => {
@@ -11,6 +12,7 @@ export const EditPost = () => {
   const [description, setDescription] = useState('');
   const [published, setPublished] = useState(false);
   const [url, setUrl] = useState('');
+  const [imgId, setImgId] = useState('');
   const [error, setError] = useState('');
   const [changeImage, setChangeImage] = useState(false);
   const [fileInput, setFileInput] = useState('');
@@ -28,6 +30,7 @@ export const EditPost = () => {
         setTitle(json[0].title);
         setDescription(json[0].desc);
         setUrl(json[0].img);
+        setImgId(json[0]?.imgId);
       } else {
         setError(json.msg);
       }
@@ -39,7 +42,14 @@ export const EditPost = () => {
     e.preventDefault();
 
     if (!fileInput) {
-      updatePost(id, title, editorRef.current.getContent(), published, url);
+      updatePost(
+        id,
+        title,
+        editorRef.current.getContent(),
+        published,
+        url,
+        imgId
+      );
     } else {
       const reader = new FileReader();
       reader.readAsDataURL(fileInput);
@@ -49,7 +59,8 @@ export const EditPost = () => {
           title,
           editorRef.current.getContent(),
           published,
-          reader.result
+          reader.result,
+          imgId
         );
       };
     }
@@ -58,17 +69,18 @@ export const EditPost = () => {
   const deleteImage = async e => {
     try {
       await fetch(`/posts/${id}`, {
-        method: 'PATCH',
+        method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${cookies.get('token').token}`,
         },
-        body: JSON.stringify({ img: '' }),
+        body: JSON.stringify({ img: '', imgId }),
       });
 
       setChangeImage(true);
       setUrl('');
       setFileInput('');
+      setImgId('');
     } catch (error) {
       setError(error);
     }

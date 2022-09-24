@@ -4,7 +4,14 @@ import { Link } from 'react-router-dom';
 import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 
-export const PostCard = ({ title, createdAt, id, setPosts, published }) => {
+export const PostCard = ({
+  title,
+  createdAt,
+  id,
+  setPosts,
+  published,
+  url,
+}) => {
   const [message, setMessage] = useState('');
   const { user } = cookies.get('token');
 
@@ -38,7 +45,7 @@ export const PostCard = ({ title, createdAt, id, setPosts, published }) => {
     >
       {message}
       <div>
-        <img style={{ borderRadius: '10px' }} src={img} alt="img" />
+        <img style={{ borderRadius: '10px' }} src={url} alt="img" />
         <Link to={`details/${id}`}>
           <h2
             style={{ fontWeight: '900', textAlign: 'center', color: 'white' }}

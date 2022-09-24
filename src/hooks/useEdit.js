@@ -6,15 +6,15 @@ export const useEdit = () => {
   const [message, setMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const updatePost = async (id, title, text, published, imgData) => {
+  const updatePost = async (id, title, text, published, imgData, imgId) => {
     try {
       const res = await fetch(`/posts/${id}`, {
-        method: 'PATCH',
+        method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${cookies.get('token').token}`,
         },
-        body: JSON.stringify({ title, desc: text, published, img: imgData }),
+        body: JSON.stringify({ title, desc: text, published, img: imgData, imgId}),
       });
       const json = await res.json();
       setMessage(json.message);
