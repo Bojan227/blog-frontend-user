@@ -10,7 +10,7 @@ export default function useDetails() {
 
   const getPostDetails = async (id) => {
     setIsLoading(true);
-    const res = await fetch(`/posts/${id}`);
+    const res = await fetch(`https://blog-api-lys3.onrender.com/posts/${id}`);
     const json = await res.json();
 
     if (res.ok) {

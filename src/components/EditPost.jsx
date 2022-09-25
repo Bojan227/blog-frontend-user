@@ -23,7 +23,7 @@ export const EditPost = () => {
 
   useEffect(() => {
     const getPostDetails = async () => {
-      const res = await fetch(`/posts/${id}`);
+      const res = await fetch(`https://blog-api-lys3.onrender.com/posts/${id}`);
       const json = await res.json();
 
       if (res.ok) {
@@ -69,7 +69,7 @@ export const EditPost = () => {
 
   const deleteImage = async e => {
     try {
-      await fetch(`/posts/${id}`, {
+      await fetch(`https://blog-api-lys3.onrender.com/posts/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

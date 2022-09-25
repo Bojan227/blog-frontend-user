@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSignup } from '../hooks/useSignup';
-import LoadingSpinner from './LoadingSpinner';
 
 export default function Signup() {
   const [username, setUsername] = useState('');

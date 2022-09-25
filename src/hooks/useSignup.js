@@ -7,7 +7,7 @@ export const useSignup = () => {
 
   const signup = async (username, password) => {
     setIsLoading(true);
-    const res = await fetch('/user/signup', {
+    const res = await fetch('https://blog-api-lys3.onrender.com/user/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

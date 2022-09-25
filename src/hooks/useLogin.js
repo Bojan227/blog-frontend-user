@@ -12,7 +12,7 @@ export const useLogin = () => {
 
   const login = async (username, password) => {
     setIsLoading(true);
-    const res = await fetch('/user/login', {
+    const res = await fetch('https://blog-api-lys3.onrender.com/user/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

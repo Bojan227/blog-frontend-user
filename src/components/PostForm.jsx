@@ -24,7 +24,7 @@ export const PostForm = () => {
 
   const uploadImage = async base64EncodedIamge => {
     try {
-      const res = await fetch('/posts/', {
+      const res = await fetch('https://blog-api-lys3.onrender.com/posts/', {
         method: 'POST',
         body: JSON.stringify({
           title,

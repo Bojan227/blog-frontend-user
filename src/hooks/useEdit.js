@@ -8,7 +8,7 @@ export const useEdit = () => {
 
   const updatePost = async (id, title, text, published, imgData, imgId) => {
     try {
-      const res = await fetch(`/posts/${id}`, {
+      const res = await fetch(`https://blog-api-lys3.onrender.com/posts/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

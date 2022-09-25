@@ -11,9 +11,12 @@ export default function Home() {
   useEffect(() => {
     setIsLoading(true);
     const getAuthorPosts = async () => {
-      const res = await fetch('/posts/authorPosts', {
-        headers: { Authorization: `Bearer ${cookies.get('token').token}` },
-      });
+      const res = await fetch(
+        'https://blog-api-lys3.onrender.com/posts/authorPosts',
+        {
+          headers: { Authorization: `Bearer ${cookies.get('token').token}` },
+        }
+      );
 
       const json = await res.json();
       if (res.ok) {
