@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSignup } from '../hooks/useSignup';
+import LoadingSpinner from './LoadingSpinner';
 
 export default function Signup() {
   const [username, setUsername] = useState('');
@@ -36,8 +37,8 @@ export default function Signup() {
         <button disabled={isLoading}>Sign Up</button>
       </form>
 
-      <h5>{error}</h5>
-      <h5>{message}</h5>
+      <h3>{error}</h3>
+      <h3>{message}</h3>
     </div>
   );
 }

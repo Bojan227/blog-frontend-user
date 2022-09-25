@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLogin } from '../hooks/useLogin';
+import LoadingSpinner from './LoadingSpinner';
 
 export default function Signup() {
   const [username, setUsername] = useState('');
@@ -12,6 +13,10 @@ export default function Signup() {
 
     await login(username, password);
   };
+
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
   return (
     <div className="login-container">
       <h1>Welcome</h1>
