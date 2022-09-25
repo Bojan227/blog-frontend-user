@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import img from '../images/redux.png';
 import { Link } from 'react-router-dom';
 import Cookies from 'universal-cookie';
 const cookies = new Cookies();
@@ -16,7 +15,7 @@ export const PostCard = ({
   const { user } = cookies.get('token');
 
   const deletePost = async () => {
-    const res = await fetch(`/posts/${id}`, {
+    const res = await fetch(`https://blog-api-lys3.onrender.com/posts/${id}`, {
       method: 'DELETE',
       headers: {
         Authorization: `Bearer ${cookies.get('token').token}`,

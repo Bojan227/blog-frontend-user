@@ -4,7 +4,6 @@ import { useEffect, useState, useRef } from 'react';
 import { useEdit } from '../hooks/useEdit';
 
 import Cookies from 'universal-cookie';
-import { set } from 'date-fns/esm';
 const cookies = new Cookies();
 
 export const EditPost = () => {
