@@ -89,6 +89,10 @@ nav {
   padding: 10px;
   height: 20vh;
 }
+.main-navigation > a {
+  align-items: center;
+  justify-content: center;
+}
 
 .main-container {
   display: flex;
@@ -111,12 +115,16 @@ nav {
   padding: 25px 45px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+.login-container > h5 {
+  font-size: 1.1rem;
+}
 
 form {
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin-top: 25px;
+  width: 100%;
 }
 
 form > input {
@@ -124,6 +132,7 @@ form > input {
   border: 0;
   border-bottom: 2px solid #65a30d;
   padding: 10px 20px;
+  width: 100%;
 }
 
 form > input:focus {
@@ -149,11 +158,11 @@ label {
 
 .posts-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 25px;
-
+  min-height: 100vh;
   color: white;
   padding: 25px;
   width: 100%;
@@ -177,8 +186,104 @@ p {
   font-size: 1.3rem;
 }
 
+.edit-container,
+.create-post-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+}
+
+.edit-container > form,
+.create-post-container > form {
+  align-items: center;
+}
+
 @media (max-width: 660px) {
   nav {
     flex-direction: column;
   }
+
+  .login-container {
+    font-size: 0.8rem;
+    width: 90%;
+    padding: 15px 20px;
+  }
+
+  .login-container > p {
+    text-align: center;
+  }
+  .edit-container > h1 {
+    text-align: center;
+  }
+  .edit-container > form > input {
+    width: 75%;
+  }
+}
+
+@media (max-width: 380px) {
+  nav {
+    font-size: 0.8rem;
+  }
+
+  .posts-container {
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 25px;
+  }
+
+  .main-navigation {
+    font-size: 0.7rem;
+    gap: 1px !important;
+  }
+
+  .signup-container {
+    font-size: 0.8rem;
+    padding: 15px 20px;
+    width: 90%;
+  }
+  .signup-container > h1 {
+    font-size: 1.5rem;
+  }
+  .signup-container > h3 {
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .login-container {
+    font-size: 0.8rem;
+    width: 90%;
+    gap: 10px;
+    padding: 15px 20px;
+  }
+
+  .login-container > p {
+    text-align: center;
+  }
+
+  .post-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+  }
+  .post-details:nth-child(3) {
+    font-size: 0.5rem;
+  }
+  .post-detail > h1 {
+    text-align: center !important;
+  }
+  .post-details > img {
+    height: 250px !important;
+  }
+}
+
+.spinner-container {
+  min-height: 100vh;
 }

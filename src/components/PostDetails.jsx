@@ -29,7 +29,7 @@ export const PostDetails = () => {
   return (
     <div className="post-details">
       <img src={url} alt="img" style={{ height: '450px' }} />
-      <h1>{title}</h1>
+      <h1 style={{ textAlign: 'center' }}>{title}</h1>
       <div style={{ display: 'flex', alignItems: 'center', gap: '18px' }}>
         <h2>{user}</h2>
         <h2>{createdAt.split('T')[0]}</h2>
@@ -41,6 +41,7 @@ export const PostDetails = () => {
           display: 'flex',
           gap: '10px',
           flexDirection: 'column',
+          textAlign: 'center',
           padding: '20px',
         }}
       >

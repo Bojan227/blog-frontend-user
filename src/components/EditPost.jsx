@@ -87,7 +87,7 @@ export const EditPost = () => {
   };
 
   return (
-    <div style={{ width: '80%', padding: '10px', textAlign: 'center' }}>
+    <div className="edit-container">
       <h1>Edit Post</h1>
       {errorMessage}
       {error && <h1>{error}</h1>}

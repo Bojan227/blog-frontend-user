@@ -21,6 +21,7 @@ const Nav = () => {
           alignItems: 'center',
           justifyContent: 'center',
         }}
+        className="main-navigation"
       >
         <Link to="/">
           <button>Home</button>
@@ -28,7 +29,9 @@ const Nav = () => {
         <Link to="create-post" style={{ textAlign: 'center' }}>
           <button>Create Post</button>
         </Link>
-        <button onClick={logout}>Log Out</button>
+        <Link to="/">
+          <button onClick={logout}>Log Out</button>
+        </Link>
       </div>
     </nav>
   );

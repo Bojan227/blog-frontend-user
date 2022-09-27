@@ -49,7 +49,14 @@ export default function Home() {
     <div
       style={{ backgroundColor: '#155e75', minHeight: '100vh', width: '100%' }}
     >
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '25px' }}>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '25px',
+          alignItems: 'center',
+        }}
+      >
         <div className="posts-container">
           {!allPosts.length ? <h1>Create your first post</h1> : allPosts}
         </div>

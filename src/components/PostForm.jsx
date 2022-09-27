@@ -47,7 +47,7 @@ export const PostForm = () => {
   };
 
   return (
-    <div style={{ width: '75%', padding: '45px' }}>
+    <div className="create-post-container">
       {message && <Navigate to="/" />}
       <form onSubmit={handleSubmit}>
         <h1 style={{ textAlign: 'center' }}>Create Post</h1>
