@@ -194,11 +194,17 @@ p {
   justify-content: center;
   gap: 15px;
   padding: 20px;
+  width: 80%;
 }
 
 .edit-container > form,
 .create-post-container > form {
   align-items: center;
+}
+
+.create-post-container > form > *,
+.edit-container > form > * {
+  width: 60%;
 }
 
 @media (max-width: 660px) {
@@ -218,8 +224,10 @@ p {
   .edit-container > h1 {
     text-align: center;
   }
-  .edit-container > form > input {
-    width: 75%;
+
+  .create-post-container > form > *,
+  .edit-container > form > * {
+    width: 80%;
   }
 }
 
@@ -282,8 +290,15 @@ p {
   .post-details > img {
     height: 250px !important;
   }
+
+  .create-post-container > form > *,
+  .edit-container > form > * {
+    width: 100%;
+  }
 }
 
 .spinner-container {
   min-height: 100vh;
+  width: 100%;
+  background-color: #155e75;
 }

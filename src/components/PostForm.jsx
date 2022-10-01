@@ -7,6 +7,7 @@ const cookies = new Cookies();
 
 export const PostForm = () => {
   const [message, setMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const [title, setTitle] = useState('');
   const editorRef = useRef(null);
   const [fileInput, setFileInput] = useState('');
@@ -14,7 +15,10 @@ export const PostForm = () => {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    if (!fileInput) return;
+    if (!fileInput) {
+      setErrorMessage('Upload your image');
+      return;
+    }
     const reader = new FileReader();
     reader.readAsDataURL(fileInput);
     reader.onloadend = () => {
@@ -59,9 +63,7 @@ export const PostForm = () => {
             onInit={(evt, editor) => (editorRef.current = editor)}
             initialValue="<p>This is the initial content of the editor.</p>"
             init={{
-              height: 350,
               menubar: false,
-
               content_style:
                 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
             }}
@@ -73,6 +75,8 @@ export const PostForm = () => {
           name="img"
           onChange={e => setFileInput(e.target.files[0])}
         />
+        <h4 style={{ color: 'red' }}>{errorMessage}</h4>
+
         <button>Save Post</button>
       </form>
     </div>
