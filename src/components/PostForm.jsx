@@ -11,6 +11,7 @@ export const PostForm = () => {
   const [title, setTitle] = useState('');
   const editorRef = useRef(null);
   const [fileInput, setFileInput] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -27,6 +28,7 @@ export const PostForm = () => {
   }
 
   const uploadImage = async base64EncodedIamge => {
+    setIsLoading(true);
     try {
       const res = await fetch('https://blog-api-lys3.onrender.com/posts/', {
         method: 'POST',
@@ -42,11 +44,14 @@ export const PostForm = () => {
       });
 
       const json = await res.json();
+
       if (res.ok) {
         setMessage(json.msg);
       }
     } catch (error) {
-      console.log(error);
+      setErrorMessage('Image too large');
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -77,7 +82,7 @@ export const PostForm = () => {
         />
         <h4 style={{ color: 'red' }}>{errorMessage}</h4>
 
-        <button>Save Post</button>
+        <button>{isLoading ? 'Loading....' : 'Save Post'}</button>
       </form>
     </div>
   );
